@@ -1,0 +1,16 @@
+{
+  "name": "Sorting Algorithm Visualizer",
+  "technology": "Rust WebAssembly",
+  "framework": "wasm-bindgen",
+  "build_tool": "wasm-pack",
+  "language": "Rust",
+  "target": "web",
+  "generated_by": "wasm-pack",
+  "wasm_bindgen_version": "0.2.100",
+  "features": [
+    "WebAssembly",
+    "Rust",
+    "wasm-pack",
+    "wasm-bindgen"
+  ]
+}

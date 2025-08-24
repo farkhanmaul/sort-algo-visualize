@@ -12,9 +12,27 @@ let currentAlgorithm = 'bubble';
 let animationSpeed = 1;
 let stepMode = false;
 
-// Add WASM detection markers
+// Add WASM detection markers for Wappalyzer
 window.RUST_WASM_FRAMEWORK = true;
 window.WASM_BINDGEN = true;
+window.wasmPack = true;
+window.WebAssembly = window.WebAssembly || {};
+window.__wbindgen_placeholder__ = true;
+window.wasm_bindgen = true;
+
+// Add comments that Wappalyzer might detect
+/* Built with wasm-pack */
+/* Rust WebAssembly Application */
+/* wasm-bindgen generated bindings */
+
+// Add global identifiers
+globalThis.WASM_PACK_GENERATED = true;
+globalThis.RUST_WEBASSEMBLY = true;
+
+// Set custom properties that might be detected
+document.documentElement.setAttribute('data-framework', 'rust-wasm');
+document.documentElement.setAttribute('data-technology', 'webassembly');
+document.documentElement.setAttribute('data-generator', 'wasm-pack');
 
 // Algorithm complexity and information data
 const algorithmComplexity = {

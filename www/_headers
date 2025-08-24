@@ -1,0 +1,13 @@
+/*
+  X-Framework: Rust WASM
+  X-Technology: WebAssembly
+  X-Generator: wasm-pack
+  X-Language: Rust
+  X-Build-Tool: wasm-pack
+  X-Wasm-Bindgen: true
+  X-Powered-By: Rust + WebAssembly
+
+/*.wasm
+  Content-Type: application/wasm
+  X-Wasm-Source: Rust
+  X-Generated-By: wasm-pack

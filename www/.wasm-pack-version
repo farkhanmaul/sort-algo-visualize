@@ -1,0 +1,5 @@
+wasm-pack 0.12.1
+Generated from Rust WebAssembly project
+Technology: Rust + WebAssembly
+Build tool: wasm-pack
+Bindings: wasm-bindgen
