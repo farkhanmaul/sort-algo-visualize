@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>Sorting Algorithm Visualizer</title>
+    <meta name="generator" content="Rust + WebAssembly">
+    <meta name="framework" content="Rust WASM">
+    <meta name="description" content="Sorting Algorithm Visualizer built with Rust compiled to WebAssembly">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,9 +25,15 @@
         
         <div class="info">
             <p>Select an algorithm and watch it sort the array!</p>
+            <small>⚡ Powered by <strong>Rust + WebAssembly</strong></small>
         </div>
     </div>
     
+    <!-- WASM Framework Detection -->
+    <script>
+        window.WASM_FRAMEWORK = 'Rust';
+        window.RUST_WASM = true;
+    </script>
     <script type="module" src="index.js"></script>
 </body>
 </html>

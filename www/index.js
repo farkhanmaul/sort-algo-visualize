@@ -1,3 +1,5 @@
+// Built with Rust and WebAssembly
+// Framework: Rust + wasm-bindgen + wasm-pack
 import init, { SortingVisualizer } from './pkg/sorting_visualizer.js';
 
 let visualizer;
@@ -5,6 +7,10 @@ let canvas;
 let ctx;
 let animationId;
 let isAnimating = false;
+
+// Add WASM detection markers
+window.RUST_WASM_FRAMEWORK = true;
+window.WASM_BINDGEN = true;
 
 async function run() {
     await init();
