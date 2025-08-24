@@ -139,6 +139,102 @@ label {
     margin-top: 1rem;
 }
 
+.algorithm-info {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.info-header h3 {
+    color: #333;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#info-toggle {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.info-content {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.info-content.hidden {
+    display: none;
+}
+
+.info-description p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.info-description p:last-child {
+    margin-bottom: 0;
+}
+
+.credits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.credit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.credit-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: bold;
+}
+
+.credit-item a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.credit-item a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+.credit-item strong {
+    color: #333;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 768px) {
     .container {
         margin: 1rem;
@@ -157,5 +253,19 @@ label {
     #canvas {
         width: 100%;
         height: auto;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .credits {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .algorithm-info {
+        padding: 1rem;
     }
 }

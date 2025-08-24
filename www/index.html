@@ -71,9 +71,39 @@
         
         <canvas id="canvas" width="800" height="400"></canvas>
         
-        <div class="info">
-            <p>Select an algorithm and watch it sort the array!</p>
-            <small>⚡ Powered by <strong>Rust + WebAssembly</strong></small>
+        <div class="algorithm-info" id="algorithm-info">
+            <div class="info-header">
+                <h3 id="algorithm-title">Bubble Sort</h3>
+                <button id="info-toggle">ℹ️ Info</button>
+            </div>
+            <div class="info-content" id="info-content">
+                <div class="info-description">
+                    <p><strong>How it works:</strong> Bubble Sort repeatedly compares adjacent elements and swaps them if they're in the wrong order. The largest element "bubbles" to the end in each pass.</p>
+                    <p><strong>Best Case:</strong> O(n) when array is already sorted</p>
+                    <p><strong>Worst Case:</strong> O(n²) when array is reverse sorted</p>
+                    <p><strong>Stability:</strong> Stable (maintains relative order of equal elements)</p>
+                    <p><strong>Use Case:</strong> Educational purposes, small datasets</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="credits">
+            <div class="credit-item">
+                <span class="credit-label">👨‍💻 Developer:</span>
+                <a href="https://github.com/farkhanmaul" target="_blank" rel="noopener">Farkhan Maulana</a>
+            </div>
+            <div class="credit-item">
+                <span class="credit-label">🤖 AI Assistant:</span>
+                <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code by Anthropic</a>
+            </div>
+            <div class="credit-item">
+                <span class="credit-label">⚡ Technology:</span>
+                <strong>Rust + WebAssembly</strong>
+            </div>
+            <div class="credit-item">
+                <span class="credit-label">📚 Purpose:</span>
+                <strong>Interactive Algorithm Education</strong>
+            </div>
         </div>
     </div>
     

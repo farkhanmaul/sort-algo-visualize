@@ -16,7 +16,7 @@ let stepMode = false;
 window.RUST_WASM_FRAMEWORK = true;
 window.WASM_BINDGEN = true;
 
-// Algorithm complexity data
+// Algorithm complexity and information data
 const algorithmComplexity = {
     bubble: { time: 'O(n²)', space: 'O(1)' },
     selection: { time: 'O(n²)', space: 'O(1)' },
@@ -25,6 +25,72 @@ const algorithmComplexity = {
     quick: { time: 'O(n log n)', space: 'O(log n)' },
     heap: { time: 'O(n log n)', space: 'O(1)' },
     shell: { time: 'O(n^1.5)', space: 'O(1)' }
+};
+
+const algorithmInfo = {
+    bubble: {
+        title: 'Bubble Sort',
+        description: 'Bubble Sort repeatedly compares adjacent elements and swaps them if they\'re in the wrong order. The largest element "bubbles" to the end in each pass.',
+        bestCase: 'O(n) when array is already sorted',
+        worstCase: 'O(n²) when array is reverse sorted',
+        stability: 'Stable (maintains relative order of equal elements)',
+        useCase: 'Educational purposes, small datasets',
+        howItWorks: 'In each pass, compare adjacent elements and swap if left > right. After each pass, the largest unsorted element moves to its correct position.'
+    },
+    selection: {
+        title: 'Selection Sort',
+        description: 'Selection Sort finds the minimum element in the unsorted portion and places it at the beginning. It divides the array into sorted and unsorted regions.',
+        bestCase: 'O(n²) - always performs the same number of comparisons',
+        worstCase: 'O(n²) - performance doesn\'t depend on input order',
+        stability: 'Unstable (may change relative order of equal elements)',
+        useCase: 'When memory writes are expensive, small datasets',
+        howItWorks: 'Find the minimum element in the unsorted array and swap it with the first unsorted element. Repeat for the remaining unsorted portion.'
+    },
+    insertion: {
+        title: 'Insertion Sort',
+        description: 'Insertion Sort builds the sorted array one element at a time by inserting each element into its correct position among the previously sorted elements.',
+        bestCase: 'O(n) when array is already sorted',
+        worstCase: 'O(n²) when array is reverse sorted',
+        stability: 'Stable (maintains relative order of equal elements)',
+        useCase: 'Small datasets, nearly sorted arrays, online algorithms',
+        howItWorks: 'Take each element and insert it into the correct position in the already sorted portion of the array, shifting elements as needed.'
+    },
+    merge: {
+        title: 'Merge Sort',
+        description: 'Merge Sort uses divide-and-conquer approach. It divides the array into halves, recursively sorts them, then merges the sorted halves.',
+        bestCase: 'O(n log n) - consistent performance regardless of input',
+        worstCase: 'O(n log n) - guaranteed optimal time complexity',
+        stability: 'Stable (maintains relative order of equal elements)',
+        useCase: 'Large datasets, when stable sorting is required, external sorting',
+        howItWorks: 'Recursively divide the array into halves until single elements, then merge sorted sub-arrays back together in correct order.'
+    },
+    quick: {
+        title: 'Quick Sort',
+        description: 'Quick Sort uses divide-and-conquer with a pivot element. It partitions the array around the pivot, then recursively sorts the sub-arrays.',
+        bestCase: 'O(n log n) when pivot divides array evenly',
+        worstCase: 'O(n²) when pivot is always the smallest/largest element',
+        stability: 'Unstable (may change relative order of equal elements)',
+        useCase: 'General purpose sorting, when average-case performance matters',
+        howItWorks: 'Choose a pivot element, partition the array so elements smaller than pivot are on left, larger on right. Recursively sort both partitions.'
+    },
+    heap: {
+        title: 'Heap Sort',
+        description: 'Heap Sort uses a binary heap data structure. It builds a max heap, then repeatedly extracts the maximum element to build the sorted array.',
+        bestCase: 'O(n log n) - consistent performance',
+        worstCase: 'O(n log n) - guaranteed performance',
+        stability: 'Unstable (may change relative order of equal elements)',
+        useCase: 'When consistent O(n log n) performance is needed, embedded systems',
+        howItWorks: 'Build a max heap from the array, then repeatedly extract the maximum element (root) and restore the heap property.'
+    },
+    shell: {
+        title: 'Shell Sort',
+        description: 'Shell Sort is an extension of insertion sort that allows exchanges of elements that are far apart. It uses a sequence of decreasing gaps.',
+        bestCase: 'O(n log n) with good gap sequence',
+        worstCase: 'O(n²) with poor gap sequence, O(n^1.5) with good sequence',
+        stability: 'Unstable (may change relative order of equal elements)',
+        useCase: 'Medium-sized datasets, when simple implementation is preferred',
+        howItWorks: 'Perform insertion sort on sub-arrays formed by elements that are a certain gap apart. Reduce the gap and repeat until gap = 1.'
+    }
 };
 
 async function run() {
@@ -51,7 +117,10 @@ async function run() {
     document.getElementById('algorithm-select').addEventListener('change', (e) => {
         currentAlgorithm = e.target.value;
         updateComplexityDisplay();
+        updateAlgorithmInfo();
     });
+    
+    document.getElementById('info-toggle').addEventListener('click', toggleAlgorithmInfo);
     
     document.getElementById('speed-control').addEventListener('input', (e) => {
         animationSpeed = parseInt(e.target.value);
@@ -72,6 +141,7 @@ async function run() {
     });
     
     updateComplexityDisplay();
+    updateAlgorithmInfo();
     updateStats();
 }
 
@@ -187,6 +257,36 @@ function updateComplexityDisplay() {
 function updateStats() {
     document.getElementById('comparisons').textContent = visualizer.get_comparisons();
     document.getElementById('swaps').textContent = visualizer.get_swaps();
+}
+
+function updateAlgorithmInfo() {
+    const info = algorithmInfo[currentAlgorithm];
+    document.getElementById('algorithm-title').textContent = info.title;
+    
+    const infoContent = document.getElementById('info-content');
+    infoContent.innerHTML = `
+        <div class="info-description">
+            <p><strong>How it works:</strong> ${info.description}</p>
+            <p><strong>Algorithm Process:</strong> ${info.howItWorks}</p>
+            <p><strong>Best Case:</strong> ${info.bestCase}</p>
+            <p><strong>Worst Case:</strong> ${info.worstCase}</p>
+            <p><strong>Stability:</strong> ${info.stability}</p>
+            <p><strong>Use Case:</strong> ${info.useCase}</p>
+        </div>
+    `;
+}
+
+function toggleAlgorithmInfo() {
+    const infoContent = document.getElementById('info-content');
+    const toggleButton = document.getElementById('info-toggle');
+    
+    if (infoContent.classList.contains('hidden')) {
+        infoContent.classList.remove('hidden');
+        toggleButton.textContent = '🔽 Hide Info';
+    } else {
+        infoContent.classList.add('hidden');
+        toggleButton.textContent = 'ℹ️ Show Info';
+    }
 }
 
 function draw() {
