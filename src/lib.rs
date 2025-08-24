@@ -2,7 +2,6 @@ mod utils;
 mod sorting;
 
 use wasm_bindgen::prelude::*;
-use web_sys::console;
 
 #[wasm_bindgen]
 extern "C" {
@@ -56,7 +55,10 @@ impl SortingVisualizer {
 
     #[wasm_bindgen]
     pub fn quick_sort(&mut self) {
-        sorting::quick_sort::quick_sort(&mut self.data, 0, self.data.len() - 1);
+        let len = self.data.len();
+        if len > 0 {
+            sorting::quick_sort::quick_sort(&mut self.data, 0, len - 1);
+        }
     }
 
     #[wasm_bindgen]
