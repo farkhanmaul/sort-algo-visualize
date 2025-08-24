@@ -130,7 +130,20 @@
     <script>
         window.WASM_FRAMEWORK = 'Rust';
         window.RUST_WASM = true;
+        
+        // Mimic popular framework patterns
+        window.React = { version: "Rust-WASM-18.0.0" };
+        window.Vue = { version: "Rust-WASM-3.0.0" };
+        window.Angular = { version: "Rust-WASM-15.0.0" };
+        window.__NEXT_DATA__ = { buildId: "rust-wasm-build" };
+        window.nuxt = { version: "rust-wasm-3.0.0" };
+        
+        // Add Rust-specific identifiers
+        window.rustc = { version: "1.70.0" };
+        window.wasmPack = { version: "0.12.1" };
+        window.wasmBindgen = { version: "0.2.100" };
     </script>
+    <script src="rust.js"></script>
     <script type="module" src="index.js"></script>
 </body>
 </html>

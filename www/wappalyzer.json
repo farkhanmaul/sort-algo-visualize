@@ -1,0 +1,42 @@
+{
+  "technologies": {
+    "Rust": {
+      "cats": [27],
+      "description": "Rust is a systems programming language focused on safety, speed, and concurrency.",
+      "icon": "Rust.svg",
+      "js": {
+        "rustc": "",
+        "Rust.version": "",
+        "RUST_FRAMEWORK": "",
+        "wasmPack": "",
+        "wasmBindgen": ""
+      },
+      "meta": {
+        "generator": "wasm-pack",
+        "framework": "wasm-bindgen", 
+        "programming-language": "Rust"
+      },
+      "html": [
+        "<!-- Built with Rust -->",
+        "<!-- wasm-pack -->",
+        "<!-- wasm-bindgen -->"
+      ],
+      "website": "https://www.rust-lang.org"
+    },
+    "WebAssembly": {
+      "cats": [27],
+      "description": "WebAssembly is a binary instruction format for a stack-based virtual machine.",
+      "icon": "WebAssembly.svg", 
+      "js": {
+        "WebAssembly": "",
+        "WEBASSEMBLY_FRAMEWORK": "",
+        "WASM_FRAMEWORK": ""
+      },
+      "meta": {
+        "technology": "WebAssembly",
+        "runtime": "WebAssembly"
+      },
+      "website": "https://webassembly.org"
+    }
+  }
+}

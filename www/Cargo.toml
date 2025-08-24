@@ -1,0 +1,30 @@
+[package]
+name = "sorting-visualizer"
+version = "0.1.0"
+edition = "2021"
+description = "Interactive sorting algorithm visualizer built with Rust and WebAssembly"
+authors = ["Farkhan Maulana <farkhanmaul@example.com>"]
+repository = "https://github.com/farkhanmaul/sort-algo-visualize"
+license = "MIT"
+keywords = ["wasm", "webassembly", "sorting", "algorithms", "visualization"]
+categories = ["wasm", "web-programming"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2.100"
+js-sys = "0.3"
+console_error_panic_hook = "0.1"
+
+[dependencies.web-sys]
+version = "0.3"
+features = [
+  "console",
+  "Document", 
+  "Element",
+  "HtmlElement",
+  "Window",
+  "CanvasRenderingContext2d",
+  "HtmlCanvasElement"
+]

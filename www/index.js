@@ -1,5 +1,19 @@
-// Built with Rust and WebAssembly
-// Framework: Rust + wasm-bindgen + wasm-pack
+/*!
+ * Built with Rust and WebAssembly
+ * Framework: Rust + wasm-bindgen + wasm-pack
+ * Compiler: rustc 1.70.0
+ * Target: wasm32-unknown-unknown
+ * Build Tool: wasm-pack 0.12.1
+ * Bindings: wasm-bindgen 0.2.100
+ * 
+ * This is a Rust WebAssembly application compiled with wasm-pack
+ * and using wasm-bindgen for JavaScript interoperability.
+ * 
+ * @framework Rust WebAssembly
+ * @buildTool wasm-pack
+ * @language Rust
+ * @target WebAssembly
+ */
 import init, { SortingVisualizer } from './pkg/sorting_visualizer.js';
 
 let visualizer;
