@@ -21,27 +21,31 @@
     <meta name="description" content="Sorting Algorithm Visualizer built with Rust compiled to WebAssembly using wasm-pack and wasm-bindgen">
     <meta name="keywords" content="Rust, WebAssembly, WASM, wasm-pack, wasm-bindgen, sorting algorithms, computer science">
     
+    <!-- Professional Icon Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎯 Visualisasi Algoritma Sorting</h1>
+            <h1><i class="fas fa-chart-line"></i> Visualisasi Algoritma Sorting</h1>
         </div>
         
         <div class="sidebar">
             <div class="control-section">
-                <h3>🎮 Kontrol</h3>
+                <h3><i class="fas fa-gamepad"></i> Kontrol</h3>
                 <div class="control-group">
-                    <button id="shuffle">🎲 Acak Data</button>
-                    <button id="reset">🔄 Reset</button>
-                    <button id="play-pause">⏯️ Main/Jeda</button>
-                    <button id="step">⏭️ Step</button>
+                    <button id="shuffle"><i class="fas fa-shuffle"></i> Acak Data</button>
+                    <button id="reset"><i class="fas fa-rotate-left"></i> Reset</button>
+                    <button id="play-pause"><i class="fas fa-play"></i> Main/Jeda</button>
+                    <button id="step"><i class="fas fa-step-forward"></i> Step</button>
                 </div>
             </div>
             
             <div class="control-section">
-                <h3>🧠 Algoritma</h3>
+                <h3><i class="fas fa-brain"></i> Algoritma</h3>
                 <div class="control-group">
                     <label for="algorithm-select">Pilih Algoritma:</label>
                     <select id="algorithm-select">
@@ -53,39 +57,39 @@
                         <option value="heap">Heap Sort</option>
                         <option value="shell">Shell Sort</option>
                     </select>
-                    <button id="sort-button" class="primary">🚀 Mulai Sorting</button>
+                    <button id="sort-button" class="primary"><i class="fas fa-rocket"></i> Mulai Sorting</button>
                 </div>
             </div>
             
             <div class="control-section">
-                <h3>⚙️ Pengaturan</h3>
+                <h3><i class="fas fa-cog"></i> Pengaturan</h3>
                 <div class="control-group">
-                    <label for="speed-control">Kecepatan: <span id="speed-value">1x</span></label>
+                    <label for="speed-control"><i class="fas fa-tachometer-alt"></i> Kecepatan: <span id="speed-value">1x</span></label>
                     <input type="range" id="speed-control" min="1" max="20" value="1">
                     
-                    <label for="array-size">Ukuran Array: <span id="size-value">50</span></label>
+                    <label for="array-size"><i class="fas fa-list-ol"></i> Ukuran Array: <span id="size-value">50</span></label>
                     <input type="range" id="array-size" min="10" max="200" value="50">
                     
                     <input type="text" id="custom-array" placeholder="Array kustom (cth: 5,3,8,1,9)">
-                    <button id="load-custom">Muat Array</button>
+                    <button id="load-custom"><i class="fas fa-upload"></i> Muat Array</button>
                 </div>
             </div>
             
             <div class="stats">
                 <div class="stat-item">
-                    <div class="stat-label">Perbandingan</div>
+                    <div class="stat-label"><i class="fas fa-exchange-alt"></i> Perbandingan</div>
                     <div class="stat-value" id="comparisons">0</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-label">Pertukaran</div>
+                    <div class="stat-label"><i class="fas fa-arrows-rotate"></i> Pertukaran</div>
                     <div class="stat-value" id="swaps">0</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-label">Kompleksitas Waktu</div>
+                    <div class="stat-label"><i class="fas fa-clock"></i> Waktu</div>
                     <div class="stat-value" id="time-complexity">O(n²)</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-label">Kompleksitas Ruang</div>
+                    <div class="stat-label"><i class="fas fa-memory"></i> Ruang</div>
                     <div class="stat-value" id="space-complexity">O(1)</div>
                 </div>
             </div>
@@ -99,7 +103,7 @@
             <div class="algorithm-info" id="algorithm-info">
                 <div class="info-header">
                     <h3 id="algorithm-title">Bubble Sort</h3>
-                    <button id="info-toggle">ℹ️ Info Algoritma</button>
+                    <button id="info-toggle"><i class="fas fa-info-circle"></i> Info Algoritma</button>
                 </div>
                 <div class="info-content" id="info-content">
                     <div class="info-description">
@@ -110,19 +114,19 @@
             
             <div class="credits">
                 <div class="credit-item">
-                    <span class="credit-label">👨‍💻 Developer</span>
+                    <span class="credit-label"><i class="fas fa-code"></i> Developer</span>
                     <a href="https://github.com/farkhanmaul" target="_blank" rel="noopener">Farkhan Maulana</a>
                 </div>
                 <div class="credit-item">
-                    <span class="credit-label">🤖 AI Assistant</span>
+                    <span class="credit-label"><i class="fas fa-robot"></i> AI Assistant</span>
                     <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a>
                 </div>
                 <div class="credit-item">
-                    <span class="credit-label">⚡ Teknologi</span>
+                    <span class="credit-label"><i class="fas fa-microchip"></i> Teknologi</span>
                     <strong>Rust + WebAssembly</strong>
                 </div>
                 <div class="credit-item">
-                    <span class="credit-label">📚 Tujuan</span>
+                    <span class="credit-label"><i class="fas fa-graduation-cap"></i> Tujuan</span>
                     <strong>Edukasi Algoritma Interaktif</strong>
                 </div>
             </div>

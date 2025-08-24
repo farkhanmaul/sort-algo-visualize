@@ -204,7 +204,12 @@ function reset() {
 function togglePlayPause() {
     if (isAnimating) {
         isPaused = !isPaused;
-        document.getElementById('play-pause').textContent = isPaused ? '▶️ Play' : '⏸️ Pause';
+        const playPauseBtn = document.getElementById('play-pause');
+        if (isPaused) {
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Lanjutkan';
+        } else {
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Jeda';
+        }
     }
 }
 
@@ -314,10 +319,10 @@ function toggleAlgorithmInfo() {
     
     if (infoContent.classList.contains('hidden')) {
         infoContent.classList.remove('hidden');
-        toggleButton.textContent = '🔽 Hide Info';
+        toggleButton.innerHTML = '<i class="fas fa-chevron-up"></i> Sembunyikan Info';
     } else {
         infoContent.classList.add('hidden');
-        toggleButton.textContent = 'ℹ️ Show Info';
+        toggleButton.innerHTML = '<i class="fas fa-info-circle"></i> Info Algoritma';
     }
 }
 
@@ -364,11 +369,11 @@ function animateBubbleSort() {
             isPaused = false;
             stepMode = false;
             setButtonsDisabled(false);
-            document.getElementById('play-pause').textContent = '⏯️ Play/Pause';
+            document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i> Main/Jeda';
         } else if (stepMode) {
             stepMode = false;
             isPaused = true;
-            document.getElementById('play-pause').textContent = '▶️ Play';
+            document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i> Lanjutkan';
         } else {
             const delay = Math.max(10, 200 / animationSpeed);
             setTimeout(step, delay);
@@ -397,11 +402,11 @@ function animateSelectionSort() {
             isPaused = false;
             stepMode = false;
             setButtonsDisabled(false);
-            document.getElementById('play-pause').textContent = '⏯️ Play/Pause';
+            document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i> Main/Jeda';
         } else if (stepMode) {
             stepMode = false;
             isPaused = true;
-            document.getElementById('play-pause').textContent = '▶️ Play';
+            document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i> Lanjutkan';
         } else {
             const delay = Math.max(10, 200 / animationSpeed);
             setTimeout(step, delay);
@@ -430,11 +435,11 @@ function animateInsertionSort() {
             isPaused = false;
             stepMode = false;
             setButtonsDisabled(false);
-            document.getElementById('play-pause').textContent = '⏯️ Play/Pause';
+            document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i> Main/Jeda';
         } else if (stepMode) {
             stepMode = false;
             isPaused = true;
-            document.getElementById('play-pause').textContent = '▶️ Play';
+            document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i> Lanjutkan';
         } else {
             const delay = Math.max(10, 200 / animationSpeed);
             setTimeout(step, delay);

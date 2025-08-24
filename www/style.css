@@ -248,6 +248,52 @@ label {
     display: block;
 }
 
+/* Professional Icon Styling */
+.fas, .far, .fab {
+    margin-right: 8px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.header h1 .fas {
+    margin-right: 12px;
+    color: var(--accent);
+    font-size: 1.2em;
+}
+
+.control-section h3 .fas {
+    margin-right: 8px;
+    color: var(--accent);
+    font-size: 0.9em;
+}
+
+.stat-label .fas {
+    margin-right: 6px;
+    font-size: 0.8em;
+    color: var(--accent);
+}
+
+.credit-label .fas {
+    margin-right: 6px;
+    font-size: 0.8em;
+    color: var(--accent);
+}
+
+button .fas {
+    margin-right: 6px;
+    font-size: 0.85em;
+}
+
+button.primary .fas {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+label .fas {
+    margin-right: 6px;
+    color: var(--accent);
+    font-size: 0.8em;
+}
+
 /* Canvas Neumorphism Style */
 .canvas-container {
     background: var(--primary);
