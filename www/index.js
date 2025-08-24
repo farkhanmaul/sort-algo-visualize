@@ -62,66 +62,66 @@ const algorithmComplexity = {
 const algorithmInfo = {
     bubble: {
         title: 'Bubble Sort',
-        description: 'Bubble Sort repeatedly compares adjacent elements and swaps them if they\'re in the wrong order. The largest element "bubbles" to the end in each pass.',
-        bestCase: 'O(n) when array is already sorted',
-        worstCase: 'O(n²) when array is reverse sorted',
-        stability: 'Stable (maintains relative order of equal elements)',
-        useCase: 'Educational purposes, small datasets',
-        howItWorks: 'In each pass, compare adjacent elements and swap if left > right. After each pass, the largest unsorted element moves to its correct position.'
+        description: 'Bubble Sort membandingkan elemen bertetangga secara berulang dan menukarnya jika urutannya salah. Elemen terbesar "menggelembung" ke akhir pada setiap iterasi.',
+        bestCase: 'O(n) ketika array sudah terurut',
+        worstCase: 'O(n²) ketika array terurut terbalik',
+        stability: 'Stabil (mempertahankan urutan relatif elemen yang sama)',
+        useCase: 'Tujuan edukasi, dataset kecil',
+        howItWorks: 'Pada setiap iterasi, bandingkan elemen bertetangga dan tukar jika kiri > kanan. Setelah setiap iterasi, elemen terbesar yang belum terurut pindah ke posisi yang benar.'
     },
     selection: {
         title: 'Selection Sort',
-        description: 'Selection Sort finds the minimum element in the unsorted portion and places it at the beginning. It divides the array into sorted and unsorted regions.',
-        bestCase: 'O(n²) - always performs the same number of comparisons',
-        worstCase: 'O(n²) - performance doesn\'t depend on input order',
-        stability: 'Unstable (may change relative order of equal elements)',
-        useCase: 'When memory writes are expensive, small datasets',
-        howItWorks: 'Find the minimum element in the unsorted array and swap it with the first unsorted element. Repeat for the remaining unsorted portion.'
+        description: 'Selection Sort mencari elemen minimum pada bagian yang belum terurut dan menempatkannya di awal. Membagi array menjadi bagian terurut dan tidak terurut.',
+        bestCase: 'O(n²) - selalu melakukan jumlah perbandingan yang sama',
+        worstCase: 'O(n²) - performa tidak tergantung urutan input',
+        stability: 'Tidak stabil (dapat mengubah urutan relatif elemen yang sama)',
+        useCase: 'Ketika penulisan memori mahal, dataset kecil',
+        howItWorks: 'Cari elemen minimum pada array yang belum terurut dan tukar dengan elemen pertama yang belum terurut. Ulangi untuk bagian yang tersisa.'
     },
     insertion: {
         title: 'Insertion Sort',
-        description: 'Insertion Sort builds the sorted array one element at a time by inserting each element into its correct position among the previously sorted elements.',
-        bestCase: 'O(n) when array is already sorted',
-        worstCase: 'O(n²) when array is reverse sorted',
-        stability: 'Stable (maintains relative order of equal elements)',
-        useCase: 'Small datasets, nearly sorted arrays, online algorithms',
-        howItWorks: 'Take each element and insert it into the correct position in the already sorted portion of the array, shifting elements as needed.'
+        description: 'Insertion Sort membangun array terurut satu elemen pada satu waktu dengan menyisipkan setiap elemen ke posisi yang benar di antara elemen yang sudah terurut.',
+        bestCase: 'O(n) ketika array sudah terurut',
+        worstCase: 'O(n²) ketika array terurut terbalik',
+        stability: 'Stabil (mempertahankan urutan relatif elemen yang sama)',
+        useCase: 'Dataset kecil, array yang hampir terurut, algoritma online',
+        howItWorks: 'Ambil setiap elemen dan sisipkan ke posisi yang benar pada bagian array yang sudah terurut, dengan menggeser elemen sesuai kebutuhan.'
     },
     merge: {
         title: 'Merge Sort',
-        description: 'Merge Sort uses divide-and-conquer approach. It divides the array into halves, recursively sorts them, then merges the sorted halves.',
-        bestCase: 'O(n log n) - consistent performance regardless of input',
-        worstCase: 'O(n log n) - guaranteed optimal time complexity',
-        stability: 'Stable (maintains relative order of equal elements)',
-        useCase: 'Large datasets, when stable sorting is required, external sorting',
-        howItWorks: 'Recursively divide the array into halves until single elements, then merge sorted sub-arrays back together in correct order.'
+        description: 'Merge Sort menggunakan pendekatan divide-and-conquer. Membagi array menjadi dua bagian, mengurutkannya secara rekursif, kemudian menggabungkan bagian yang sudah terurut.',
+        bestCase: 'O(n log n) - performa konsisten tanpa tergantung input',
+        worstCase: 'O(n log n) - kompleksitas waktu optimal terjamin',
+        stability: 'Stabil (mempertahankan urutan relatif elemen yang sama)',
+        useCase: 'Dataset besar, ketika sorting stabil diperlukan, sorting eksternal',
+        howItWorks: 'Secara rekursif bagi array menjadi dua sampai elemen tunggal, kemudian gabungkan sub-array yang terurut kembali dalam urutan yang benar.'
     },
     quick: {
         title: 'Quick Sort',
-        description: 'Quick Sort uses divide-and-conquer with a pivot element. It partitions the array around the pivot, then recursively sorts the sub-arrays.',
-        bestCase: 'O(n log n) when pivot divides array evenly',
-        worstCase: 'O(n²) when pivot is always the smallest/largest element',
-        stability: 'Unstable (may change relative order of equal elements)',
-        useCase: 'General purpose sorting, when average-case performance matters',
-        howItWorks: 'Choose a pivot element, partition the array so elements smaller than pivot are on left, larger on right. Recursively sort both partitions.'
+        description: 'Quick Sort menggunakan divide-and-conquer dengan elemen pivot. Mempartisi array di sekitar pivot, kemudian mengurutkan sub-array secara rekursif.',
+        bestCase: 'O(n log n) ketika pivot membagi array secara merata',
+        worstCase: 'O(n²) ketika pivot selalu elemen terkecil/terbesar',
+        stability: 'Tidak stabil (dapat mengubah urutan relatif elemen yang sama)',
+        useCase: 'Sorting tujuan umum, ketika performa rata-rata penting',
+        howItWorks: 'Pilih elemen pivot, partisi array sehingga elemen yang lebih kecil dari pivot di kiri, yang lebih besar di kanan. Urutkan kedua partisi secara rekursif.'
     },
     heap: {
         title: 'Heap Sort',
-        description: 'Heap Sort uses a binary heap data structure. It builds a max heap, then repeatedly extracts the maximum element to build the sorted array.',
-        bestCase: 'O(n log n) - consistent performance',
-        worstCase: 'O(n log n) - guaranteed performance',
-        stability: 'Unstable (may change relative order of equal elements)',
-        useCase: 'When consistent O(n log n) performance is needed, embedded systems',
-        howItWorks: 'Build a max heap from the array, then repeatedly extract the maximum element (root) and restore the heap property.'
+        description: 'Heap Sort menggunakan struktur data binary heap. Membangun max heap, kemudian berulang kali mengekstrak elemen maksimum untuk membangun array terurut.',
+        bestCase: 'O(n log n) - performa konsisten',
+        worstCase: 'O(n log n) - performa terjamin',
+        stability: 'Tidak stabil (dapat mengubah urutan relatif elemen yang sama)',
+        useCase: 'Ketika performa O(n log n) konsisten diperlukan, sistem embedded',
+        howItWorks: 'Bangun max heap dari array, kemudian berulang kali ekstrak elemen maksimum (root) dan perbaiki properti heap.'
     },
     shell: {
         title: 'Shell Sort',
-        description: 'Shell Sort is an extension of insertion sort that allows exchanges of elements that are far apart. It uses a sequence of decreasing gaps.',
-        bestCase: 'O(n log n) with good gap sequence',
-        worstCase: 'O(n²) with poor gap sequence, O(n^1.5) with good sequence',
-        stability: 'Unstable (may change relative order of equal elements)',
-        useCase: 'Medium-sized datasets, when simple implementation is preferred',
-        howItWorks: 'Perform insertion sort on sub-arrays formed by elements that are a certain gap apart. Reduce the gap and repeat until gap = 1.'
+        description: 'Shell Sort adalah perluasan dari insertion sort yang memungkinkan pertukaran elemen yang berjauhan. Menggunakan urutan gap yang menurun.',
+        bestCase: 'O(n log n) dengan urutan gap yang baik',
+        worstCase: 'O(n²) dengan urutan gap yang buruk, O(n^1.5) dengan urutan gap yang baik',
+        stability: 'Tidak stabil (dapat mengubah urutan relatif elemen yang sama)',
+        useCase: 'Dataset berukuran sedang, ketika implementasi sederhana dipilih',
+        howItWorks: 'Lakukan insertion sort pada sub-array yang dibentuk oleh elemen dengan jarak gap tertentu. Kurangi gap dan ulangi hingga gap = 1.'
     }
 };
 
@@ -263,7 +263,7 @@ function loadCustomArray() {
     try {
         const customData = input.split(',').map(num => parseInt(num.trim()));
         if (customData.some(isNaN) || customData.length === 0) {
-            alert('Please enter valid numbers separated by commas');
+            alert('Harap masukkan angka yang valid dipisahkan dengan koma');
             return;
         }
         
@@ -271,12 +271,12 @@ function loadCustomArray() {
         visualizer = new SortingVisualizer(customData.length);
         // We need to manually set the data - this would require a new WASM method
         // For now, we'll shuffle and let user know
-        alert('Custom array feature coming soon! Using shuffled array for now.');
+        alert('Fitur array kustom segera hadir! Menggunakan array acak untuk saat ini.');
         visualizer.shuffle();
         draw();
         updateStats();
     } catch (error) {
-        alert('Invalid input format. Please use format: 5,3,8,1,9');
+        alert('Format input tidak valid. Gunakan format: 5,3,8,1,9');
     }
 }
 
@@ -298,12 +298,12 @@ function updateAlgorithmInfo() {
     const infoContent = document.getElementById('info-content');
     infoContent.innerHTML = `
         <div class="info-description">
-            <p><strong>How it works:</strong> ${info.description}</p>
-            <p><strong>Algorithm Process:</strong> ${info.howItWorks}</p>
-            <p><strong>Best Case:</strong> ${info.bestCase}</p>
-            <p><strong>Worst Case:</strong> ${info.worstCase}</p>
-            <p><strong>Stability:</strong> ${info.stability}</p>
-            <p><strong>Use Case:</strong> ${info.useCase}</p>
+            <p><strong>Cara Kerja:</strong> ${info.description}</p>
+            <p><strong>Proses Algoritma:</strong> ${info.howItWorks}</p>
+            <p><strong>Kasus Terbaik:</strong> ${info.bestCase}</p>
+            <p><strong>Kasus Terburuk:</strong> ${info.worstCase}</p>
+            <p><strong>Stabilitas:</strong> ${info.stability}</p>
+            <p><strong>Kegunaan:</strong> ${info.useCase}</p>
         </div>
     `;
 }
